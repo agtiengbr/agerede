@@ -1,0 +1,72 @@
+[name=agerede_cardnumber] {
+	position: relative;
+}
+
+#agerede_credit_card img,
+#agerede_debit_card img{
+	float: left;
+    position: absolute;
+    right: 20px;
+    top: 2px;
+}
+
+#agerede_credit_card .box .row.person_type,
+#agerede_debit_card .box .row.person_type {
+	margin-bottom: 20px;
+}
+
+#agerede_credit_card label,
+#agerede_debit_card label {
+	margin-bottom: 0; 
+	color: #888;
+}
+
+#agerede_credit_card select.is-not-selected,
+#agerede_debit_card select.is-not-selected {
+	color: #777;
+}
+
+#agerede_credit_card .box > .row,
+#agerede_debit_card	 .box > .row{
+	margin-bottom: 10px;
+}
+
+
+[name=agerede_year] {
+	padding-left: 7px;
+}
+
+#agerede_credit_card .has-error,
+#agerede_debit_card .has-error {
+	color: red;
+}
+
+#agerede_credit_card .has-error input,
+#agerede_credit_card .has-error select,
+#agerede_debit_card .has-error input,
+#agerede_debit_card .has-error select{
+	border: 1px solid red;
+}
+
+
+@media(max-width: 767px) {
+	#agerede_credit_card .box .row,
+	#agerede_debit_card .box .row {
+		margin-bottom: 0;
+	}
+
+	#agerede_credit_card input,
+	#agerede_credit_card select,
+	#agerede_debit_card input,
+	#agerede_debit_card select{
+		margin-bottom: 10px;
+	}
+}
+
+
+
+/* PS 16 */
+#module-agerede-creditCard #agerede_credit_card select,
+#module-agerede-debitCard #agerede_debit_card select{
+	height: 28px;
+}
