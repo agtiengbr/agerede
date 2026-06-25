@@ -26,37 +26,22 @@
 }
 
 #agerede_credit_card img,
-#agerede_debit_card img{
+#agerede_debit_card img {
 	float: left;
-    position: absolute;
-    right: 20px;
-    top: 2px;
-}
-
-#agerede_credit_card .box .row.person_type,
-#agerede_debit_card .box .row.person_type {
-	margin-bottom: 20px;
+	position: absolute;
+	right: 20px;
+	top: 2px;
 }
 
 #agerede_credit_card label,
 #agerede_debit_card label {
-	margin-bottom: 0; 
+	margin-bottom: 0;
 	color: #888;
 }
 
 #agerede_credit_card select.is-not-selected,
 #agerede_debit_card select.is-not-selected {
 	color: #777;
-}
-
-#agerede_credit_card .box > .row,
-#agerede_debit_card	 .box > .row{
-	margin-bottom: 10px;
-}
-
-
-[name=agerede_year] {
-	padding-left: 7px;
 }
 
 #agerede_credit_card .has-error,
@@ -67,29 +52,68 @@
 #agerede_credit_card .has-error input,
 #agerede_credit_card .has-error select,
 #agerede_debit_card .has-error input,
-#agerede_debit_card .has-error select{
+#agerede_debit_card .has-error select {
 	border: 1px solid red;
 }
 
+/* Grid compacto dos campos do cartão */
+#agerede_credit_card .agerede-card-fields,
+#agerede_debit_card .agerede-card-fields {
+	display: grid;
+	grid-template-columns: 3fr 2fr;
+	gap: 0.75rem;
+	max-width: 480px;
+}
 
-@media(max-width: 767px) {
-	#agerede_credit_card .box .row,
-	#agerede_debit_card .box .row {
-		margin-bottom: 0;
+#agerede_credit_card .agerede-field--number,
+#agerede_credit_card .agerede-field--name,
+#agerede_credit_card .agerede-field--installments,
+#agerede_debit_card .agerede-field--number,
+#agerede_debit_card .agerede-field--name {
+	grid-column: 1 / -1;
+}
+
+#agerede_credit_card .agerede-field--number,
+#agerede_debit_card .agerede-field--number {
+	position: relative;
+}
+
+#agerede_credit_card .agerede-expiry-group,
+#agerede_debit_card .agerede-expiry-group {
+	display: flex;
+	gap: 0.5rem;
+}
+
+#agerede_credit_card .agerede-expiry-group select,
+#agerede_debit_card .agerede-expiry-group select {
+	flex: 1;
+	min-width: 0;
+}
+
+#agerede_credit_card .agerede-field input,
+#agerede_credit_card .agerede-field select,
+#agerede_debit_card .agerede-field input,
+#agerede_debit_card .agerede-field select {
+	width: 100%;
+	box-sizing: border-box;
+}
+
+@media (max-width: 767px) {
+	#agerede_credit_card .agerede-card-fields,
+	#agerede_debit_card .agerede-card-fields {
+		grid-template-columns: 1fr;
 	}
 
-	#agerede_credit_card input,
-	#agerede_credit_card select,
-	#agerede_debit_card input,
-	#agerede_debit_card select{
-		margin-bottom: 10px;
+	#agerede_credit_card .agerede-field--expiry,
+	#agerede_credit_card .agerede-field--cvv,
+	#agerede_debit_card .agerede-field--expiry,
+	#agerede_debit_card .agerede-field--cvv {
+		grid-column: 1 / -1;
 	}
 }
 
-
-
 /* PS 16 */
 #module-agerede-creditCard #agerede_credit_card select,
-#module-agerede-debitCard #agerede_debit_card select{
+#module-agerede-debitCard #agerede_debit_card select {
 	height: 28px;
 }
