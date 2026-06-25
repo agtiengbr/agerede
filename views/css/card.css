@@ -1,0 +1,12 @@
+@media (max-width: 450px) {
+    .jp-card-container{
+        transform: scale(0.895)!important;
+        transform-origin:center center!important
+    }
+}
+
+#agerede_credit_card input,
+#agerede_credit_card select {padding: 0.5rem 1rem;color: #7a7a7a;background: #f6f6f6;border: 1px solid rgba(0, 0, 0, 0.25);}
+#agerede_credit_card select:not([size]):not([multiple]) {height: calc(2.5rem - 2px);}
+
+.card-wrapper { min-height: 0; }
