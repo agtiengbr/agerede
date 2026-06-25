@@ -2,6 +2,29 @@
 	position: relative;
 }
 
+/* Normaliza inputs/selects para o mesmo visual do agpagseguro */
+#agerede_credit_card input,
+#agerede_credit_card select,
+#agerede_debit_card input,
+#agerede_debit_card select {
+	padding: 0.5rem 1rem;
+	color: #7a7a7a;
+	background: #f6f6f6;
+	border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+#agerede_credit_card select:not([size]):not([multiple]),
+#agerede_debit_card select:not([size]):not([multiple]) {
+	height: calc(2.5rem - 2px);
+}
+
+#agerede_credit_card .agerede_cardbanner,
+#agerede_debit_card .agerede_cardbanner {
+	position: absolute;
+	top: 23px;
+	right: 15px;
+}
+
 #agerede_credit_card img,
 #agerede_debit_card img{
 	float: left;
