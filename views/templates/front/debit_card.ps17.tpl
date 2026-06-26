@@ -1,36 +1,29 @@
-<form action="{$form_action}" method="post" id="agerede_debit_card">
-	<input type="hidden" name="payment_mode" value="debit_card" />
-	
+<form action="{$form_action}" method="post" id="agerede_debit_card" class="mb-2">
+    <div class="card-wrapper mb-2 mt-2"></div>
+
+    <input type="hidden" name="payment_mode" value="debit_card" />
+
     <div class="box cheque-box">
         {if $discount}
             <p>Pagando no cartão de débito você recebe um desconto de {$discount}%, e o seu pedido terá o valor de {$total_with_discount_formatted}</p>
         {/if}
 
-        <div class="row">
-            <div id="cardnumber" class="col-xs-12 col-md-6 col-lg-7">
-                <label class="col-xs-12 sr-only">Número do cartão</label>
-                <input type="text" name="agerede_cardnumber" class="col-xs-12" tabindex="1" autocomplete="off"  placeholder="Número do Cartão"/>
+        <div class="agerede-card-fields">
+            <div id="cardnumber" class="agerede-field agerede-field--number">
+                <label class="sr-only">Número do cartão</label>
+                <input type="text" name="agerede_cardnumber" id="agerede_debit_cardnumber" tabindex="1" autocomplete="off" placeholder="Número do Cartão" />
                 <div class="agerede_cardbanner"></div>
             </div>
-            
-            <div class="col-xs-12 col-md-4 col-lg-3">
-                <label class="col-xs-12  sr-only">Cod. Segurança</label>
-                <input type="text" name="agerede_cvv" class="col-xs-12" tabindex="1" autocomplete="off" maxlength="4" placeholder="CVV"/>
-            </div>
-        </div>
 
-        <div class="row">
-            <div id="cardholder" class="col-lg-10">
-                <label class="col-xs-12  sr-only">Nome do Proprietário</label>
-                <input type="text" name="agerede_name" class="col-xs-12" tabindex="1" autocomplete="off" maxlength="48" placeholder="Nome conforme exibido no cartão"/>
+            <div id="cardholder" class="agerede-field agerede-field--name">
+                <label class="sr-only">Nome do Proprietário</label>
+                <input type="text" name="agerede_name" id="agerede_debit_name" tabindex="1" autocomplete="off" maxlength="48" placeholder="Nome conforme exibido no cartão" />
             </div>
-        </div>
 
-        <div class="row">
-            <div class="col-xs-12 col-md-4 col-lg-5">
-                <label class="col-xs-12  sr-only">Validade:</label>
-                <span>
-                    <select name="agerede_month" class="col-xs-7  is-not-selected" tabindex="1" autocomplete="off" maxlength="24">
+            <div class="agerede-field agerede-field--expiry">
+                <label class="sr-only">Validade</label>
+                <div class="agerede-expiry-group">
+                    <select name="agerede_month" id="agerede_debit_month" class="is-not-selected" tabindex="1" autocomplete="off">
                         <option value="-1">Mês</option>
                         <option value="01">Janeiro</option>
                         <option value="02">Fevereiro</option>
@@ -45,17 +38,19 @@
                         <option value="11">Novembro</option>
                         <option value="12">Dezembro</option>
                     </select>
-                </span>
-
-                <span>
-                    <select name="agerede_year" class="col-xs-5 is-not-selected" tabindex="1" autocomplete="off" maxlength="24">
+                    <select name="agerede_year" id="agerede_debit_year" class="is-not-selected" tabindex="1" autocomplete="off">
                         <option value="-1">Ano</option>
                         {for $year=0 to 10}
                             {$y = date('Y') + $year}
                             <option value="{$y}">{$y}</option>
                         {/for}
                     </select>
-                </span>
+                </div>
+            </div>
+
+            <div class="agerede-field agerede-field--cvv">
+                <label class="sr-only">Cod. Segurança</label>
+                <input type="text" name="agerede_cvv" id="agerede_debit_cvv" tabindex="1" autocomplete="off" maxlength="4" placeholder="CVV" />
             </div>
         </div>
     </div>

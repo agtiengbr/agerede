@@ -55,7 +55,7 @@ class BaseAgERede extends AgPaymentModule
     {
         $this->name     = 'agerede';
         $this->tab      = 'payments_gateways';
-        $this->version  = '2.0.0';
+        $this->version  = '2.0.1';
         $this->author   = 'AGTI';
 
         $this->bootstrap = true;
@@ -1106,12 +1106,15 @@ class BaseAgERede extends AgPaymentModule
         $this->context->controller->addJs(
             [                
                 $this->_path . 'views/js/loading_overlay.js',
+                $this->_path . 'views/js/card.js',
+                $this->_path . 'views/js/card_setup.js',
                 $this->_path . 'views/js/credit_card.ps17.js',
                 $this->_path . 'views/js/debit_card.ps17.js',
             ]
         );
 
         $this->context->controller->addCSS(_PS_MODULE_DIR_ . $this->name . '/views/css/front.css');
+        $this->context->controller->addCSS(_PS_MODULE_DIR_ . $this->name . '/views/css/card.css');
 
         $agerede = [
             'base_uri'  => $this->context->shop->getBaseURL(true)
