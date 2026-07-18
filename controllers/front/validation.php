@@ -56,7 +56,7 @@ class AgERedeValidationModuleFrontController extends ModuleFrontController
 
             $this->module->validateOrder($cart->id, $order_status, $cart->getOrderTotal(), $payment_str, NULL, NULL, (int)$this->context->currency->id, false, $this->context->customer->secure_key);
 
-            $ps_order = new Order(Order::getOrderByCartId($cart->id));
+            $ps_order = Order::getByCartId($cart->id);
 
             $obj = new AgERedeTransaction;
             $obj->id_order = $ps_order->id;

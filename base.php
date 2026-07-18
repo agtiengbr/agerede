@@ -55,7 +55,7 @@ class BaseAgERede extends AgPaymentModule
     {
         $this->name     = 'agerede';
         $this->tab      = 'payments_gateways';
-        $this->version  = '2.0.1';
+        $this->version  = '2.1.0';
         $this->author   = 'AGTI';
 
         $this->bootstrap = true;

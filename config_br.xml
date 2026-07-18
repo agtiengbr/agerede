@@ -2,7 +2,7 @@
 <module>
     <name>agerede</name>
     <displayName><![CDATA[E-Rede Transparente]]></displayName>
-    <version><![CDATA[2.0.0]]></version>
+    <version><![CDATA[2.1.0]]></version>
     <description><![CDATA[Integra a sua loja PrestaShop com o intermediador de pagamentos E-Rede.]]></description>
     <author><![CDATA[AGTI]]></author>
     <tab><![CDATA[payments_gateways]]></tab>
